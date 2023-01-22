@@ -6,7 +6,7 @@ export function HomePage() {
     const [author, setAuthor] = useState("");
 
     useEffect(() => {
-        fetch("https://api.quotable.io/random")
+        fetch("https://usu-quotes-mimic.vercel.app/api/random")
         .then(resp => resp.json())
         .then(data => {
             console.log(data);
@@ -25,7 +25,7 @@ export function HomePage() {
     return (
         <div>
             <h4>Here's a free quote!</h4>
-            <QuoteBox quote={quote} author={author}/>
+            <QuoteBox quote={quote} author={author}/> 
         </div>
     )
 }

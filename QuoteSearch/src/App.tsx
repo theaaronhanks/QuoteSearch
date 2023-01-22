@@ -6,17 +6,21 @@ import SearchIcon from '@mui/icons-material/Search';
 
 export function App() {
     const [pageName, setPageName] = useState("home");
-    const [searchContent, setSearchContent] = useState("")
+    const [searchContent, setSearchContent] = useState("");
+    const [searchCriteria, setSearchCriteria] = useState("");
 
-    function search() {
-        setPageName("search")
+    function search(event: React.FormEvent<HTMLFormElement>) {
+        console.log("I was called!");
+        setPageName("search");
+        setSearchCriteria(searchContent);
+        event.preventDefault();
     }
 
     return (
-        <div className='home'>
+        <div className={pageName}>
             <h2>Quote Search!</h2>  
             <div className="search-bar">
-                <form>
+                <form onSubmit={search}>
                     <span className='icon'>
                         <SearchIcon/>
                     </span>
@@ -25,14 +29,13 @@ export function App() {
                         value={searchContent} 
                         placeholder="Famous person"
                         onChange={e => setSearchContent(e.target.value)}
-                        onSubmit={e => {setPageName("search"); e.preventDefault(); }}
                     />
-                    <button onClick={() => search()}>Search</button>
+                    <button type='submit'>Search</button>
                 </form>
             </div>
 
             {pageName === "home" && <HomePage/>}
-            {pageName === "search" && <SearchPage content={searchContent}/>}
+            {pageName === "search" && <SearchPage content={searchCriteria}/>}
         </div>
     )
 }
