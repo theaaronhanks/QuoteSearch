@@ -17,12 +17,13 @@
 }
 
 body {
+    margin: 0;
     height: 100vh;
     position: relative;
 }
 
 #root {
-    height: 100vh;
+    height: 100%;
 }
 
 .author {
@@ -46,17 +47,19 @@ body {
 }
 
 .home {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    padding: 16px;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    display: flex;
     max-width: 100%;
     width: 100vh;
     text-align: center;
 }
 
 .search {
-    padding: 4px;
+    padding: 16px;
     max-height: 100%;
     max-width: 100%;
     height: 100vh;
