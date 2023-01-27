@@ -10,7 +10,6 @@ export function App() {
     const [searchCriteria, setSearchCriteria] = useState("");
 
     function search(event: React.FormEvent<HTMLFormElement>) {
-        console.log("I was called!");
         setPageName("search");
         setSearchCriteria(searchContent);
         event.preventDefault();

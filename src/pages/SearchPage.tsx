@@ -28,7 +28,6 @@ export function SearchPage({content}: SearchPageProps) {
         .then(resp => resp.json())
         .then(data => {
             let results = data.results;
-            console.log("got data");
             
             for (let result of results) {
                 const quote = {
