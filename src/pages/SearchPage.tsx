@@ -28,7 +28,6 @@ export function SearchPage({content}: SearchPageProps) {
         .then(resp => resp.json())
         .then(data => {
             let results = data.results;
-            // let results = [{"_id":"ut3otm", content:"You'll see it when you believe it.", author:"Wayne Dyer","authorSlug":"Wayne Dyer","length":34,"tags":[]}, {"_id":"-17rh9lt","content":"Never put off till tomorrow what you can do today.","author":"Thomas Jefferson","authorSlug":"Thomas Jefferson","length":50,"tags":[]}]
             console.log("got data");
             
             for (let result of results) {
